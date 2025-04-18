@@ -27,7 +27,6 @@ alfa=1i*hb/(2*m);
 % Parámetros espaciales
 yi=-4;
 L=8;
-%N=99999;
 N=2^18;
 h=L/(N+1);
 y=yi:h:yi+L;
@@ -44,8 +43,8 @@ frond=@(t)(0);
 Uy(1,1)=froni(0);
 Uy(N+2,1)=frond(0);
 % Funciones en el instante inicial (velocidad inicial en el eje y)
-uiniy=@(y)1/sqrt(2*pi)*(exp(1i*ky*y).*exp(-y.^2/2));
-%uiniy=@(y)1/sqrt(2*pi).*exp(-y.^2/2);
+%uiniy=@(y)1/sqrt(2*pi)*(exp(1i*ky*y).*exp(-y.^2/2)); % (Si queremos que la función tenga velocidad inicial)
+uiniy=@(y)1/sqrt(2*pi).*exp(-y.^2/2);
 Uy(2:N+1,1)=uiniy(y(2:N+1));
 % Resolvemos la ecuación
 [Uy]=crank_nicolson_part(Uy,h,k,alfa,froni,frond,N,M);
