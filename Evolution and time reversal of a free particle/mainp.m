@@ -36,7 +36,7 @@ for j=1:M+1
     if terminar==true
         break
     end
-    % Dispersión total
+    % Dispersiones
     a(j)=std(yp1);
     b(j)=std(vp);
     c(j)=a(j)*b(j);
@@ -67,7 +67,7 @@ for j=1:M
             yp(i)=yi+L-1;
         end
     end
-    % Dispersión total
+    % Dispersiones
     d(j)=std(yp);
     e(j)=std(vp);
     f(j)=d(j)*e(j);
