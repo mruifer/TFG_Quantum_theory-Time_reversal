@@ -15,11 +15,11 @@
 %% Generación de distribución gausiana
 gen_part;
 %% Solución de la ecuación de onda de partícula libre
-%llamadaev;
+llamadaev;
+a=0;
+b=0;
+c=0;
 % Evolución de las partículas generadas según la función de onda calculada
-h=L/(N+1);
-t=T/M;
-q=1;
 for l=1:length(yp)
     if yp(l)<=yi
         yp(l)=yi;
@@ -29,15 +29,10 @@ for l=1:length(yp)
 end
 figure(1)
 for j=1:M
-    %{
-    a(j)=std(yp);
-    b(j)=std(vp);
-    c(j)=a(j)*b(j);
-    %}
     % Velocidades
     [vp]=evop(Uy(:,j),Ury(:,j),Uiy(:,j),h,yi,yp);
     % Posiciones
-    yp=yp+vp*t;
+    yp=yp+vp*k;
     for l=1:length(yp)
         if yp(l)<=yi
             yp(l)=yi;
@@ -45,7 +40,10 @@ for j=1:M
             yp(l)=yi+L;
         end
     end
-    
+    % Dispersiones
+    a(j)=std(yp);
+    b(j)=std(vp);
+    c(j)=a(j)*b(j);
     % Representación de la función de onda y las particulas evolucionado
     plot(y,Uty(:,j))
     hold on
@@ -53,24 +51,30 @@ for j=1:M
     xlim([-4 4]);
     ylim([0 0.35]);
     hold off
-    A=getframe();
-    
+    A=getframe();   
 end
-%{
 figure(2)
 hold on
 title("Dispersion of the particle's position (caged)")
-plot(a)
+xlabel("Time (a.u.t.)")
+ylabel("Standard deviation (Å)")
+plot(t(1:length(a)),a)
+saveas(gcf, 'Dispersion of the particle`s position (caged).jpg')
 hold off
 figure(3)
 hold on
 title("Dispersion of the particle's velocity (caged)")
-plot(b)
+plot(t(1:length(a)),b)
+xlabel("Time (a.u.t.)")
+ylabel("Standard deviation (Å/a.u.t.)")
+saveas(gcf, 'Dispersion of the particle`s velocity (caged).jpg')
 hold off
 figure(4)
 hold on
 title("Uncertainty principle (caged)")
-plot(c)
+plot(t(1:length(a)),c)
+xlabel("Time (a.u.t.)")
+ylabel("Uncertainty (ħ units)")
+saveas(gcf, 'Uncertainty principle (caged).jpg')
 hold off
-%}
 movie(A)
