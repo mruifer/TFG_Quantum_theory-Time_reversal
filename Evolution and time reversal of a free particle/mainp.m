@@ -45,7 +45,7 @@ for j=1:M+1
     % Representación de la función de onda y las particulas evolucionado
     plot(y,Uty(:,j))
     hold on
-    scatter(yp,valvertical)
+    scatter(yp1,valvertical)
     xlim([-10 (yi+L-5)]);
     ylim([0 0.35]);
     hold off
