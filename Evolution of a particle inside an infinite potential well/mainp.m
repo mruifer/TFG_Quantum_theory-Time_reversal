@@ -1,4 +1,4 @@
-%%% Simulación de partículas libres
+%%% Simulación de partículas enjauladas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Variables
 % * 
