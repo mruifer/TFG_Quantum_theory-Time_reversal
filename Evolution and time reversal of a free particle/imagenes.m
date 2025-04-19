@@ -1,4 +1,5 @@
 gen_part;
+llamadaev();
 yp1=yp;
 h=L/(N+1);
 
@@ -28,7 +29,7 @@ for j=1:M
         xlim([-10 10]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen11.jpg')
+        saveas(gcf, 'Image 11.jpg')
         figure(3)
         plot(y,Wty(:,j))
         hold on
@@ -39,7 +40,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen7.jpg')
+        saveas(gcf, 'Image 7.jpg')
         hold off
     end
     if j==300
@@ -49,7 +50,7 @@ for j=1:M
         xlim([5 25]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen12.jpg')
+        saveas(gcf, 'Image 12.jpg')
         figure(3)
         plot(y,Wty(:,j))
         hold on
@@ -60,7 +61,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen8.jpg')
+        saveas(gcf, 'Image 8.jpg')
         hold off
     end
     if j==301
@@ -70,7 +71,7 @@ for j=1:M
         xlim([5 25]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen13.jpg')
+        saveas(gcf, 'Image 13.jpg')
         figure(3)
         plot(y,Wty(:,j))
         hold on
@@ -81,7 +82,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen9.jpg')
+        saveas(gcf, 'Image 9.jpg')
         hold off
     end
     if j==600
@@ -91,7 +92,7 @@ for j=1:M
         xlim([-10 10]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen14.jpg')
+        saveas(gcf, 'Image 14.jpg')
         figure(3)
         plot(y,Wty(:,j))
         hold on
@@ -102,7 +103,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen10.jpg')
+        saveas(gcf, 'Image 10.jpg')
         hold off
         break
     end
@@ -140,7 +141,7 @@ for j=1:M
         xlim([-5 5]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen4.jpg')
+        saveas(gcf, 'Image 4.jpg')
         figure(3)
         plot(y,Uty(:,j))
         hold on
@@ -151,7 +152,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen1.jpg')
+        saveas(gcf, 'Image 1.jpg')
         hold off
     end
     if j==75
@@ -161,7 +162,7 @@ for j=1:M
         xlim([-1.25 8.75]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen5.jpg')
+        saveas(gcf, 'Image 5.jpg')
                 figure(3)
         plot(y,Uty(:,j))
         hold on
@@ -172,7 +173,7 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen2.jpg')
+        saveas(gcf, 'Image 2.jpg')
         hold off
     end
     if j==150
@@ -182,7 +183,7 @@ for j=1:M
         xlim([2.5 12.5]);
         yticks([]);
         set(gca, 'YColor', 'none');
-        saveas(gcf, 'Imagen6.jpg')
+        saveas(gcf, 'Image 6.jpg')
         figure(3)
         plot(y,Uty(:,j))
         hold on
@@ -193,24 +194,8 @@ for j=1:M
         ylim([-0.4 0.4]);
         legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
         yline(0,'k','LineWidth',1,'HandleVisibility','off')
-        saveas(gcf, 'Imagen3.jpg')
+        saveas(gcf, 'Image 3.jpg')
         hold off
         break
     end
 end
-
-
-
-%{
-plot(y,Uty(:,75))
-hold on
-plot(y,Ury(:,75))
-plot(y,Uiy(:,75))
-xlabel('Position')
-xlim([-1.25 8.75]);
-ylim([-0.4 0.4]);
-legend('Probability density','Real-part wave-function','Imaginary-part wave-function','Location','best')
-yline(0,'k','LineWidth',1,'HandleVisibility','off')
-saveas(gcf, 'Imagen2.jpg')
-hold off
-%}
